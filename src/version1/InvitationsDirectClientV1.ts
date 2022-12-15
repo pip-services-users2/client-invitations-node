@@ -19,12 +19,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.get_invitations');
         
         try {
-            return await this._controller.getInvitations(correlationId, filter, paging);
+            let res = await this._controller.getInvitations(correlationId, filter, paging);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -32,12 +32,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.get_invitation_by_id');
 
         try {
-            return await this._controller.getInvitationById(correlationId, invitationId);
+            let res = await this._controller.getInvitationById(correlationId, invitationId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -45,12 +45,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.create_invitation');
         
         try {
-            return await this._controller.createInvitation(correlationId, invitation);
+            let res = await this._controller.createInvitation(correlationId, invitation);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -58,12 +58,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.delete_invitation_by_id');
         
         try {
-            return await this._controller.deleteInvitationById(correlationId, invitationId);
+            let res = await this._controller.deleteInvitationById(correlationId, invitationId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -71,12 +71,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.activate_invitations');
         
         try {
-            return await this._controller.activateInvitations(correlationId, email, userId);
+            let res = await this._controller.activateInvitations(correlationId, email, userId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -84,12 +84,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.approve_invitation');
         
         try {
-            return await this._controller.approveInvitation(correlationId, invitationId, role);
+            let res = await this._controller.approveInvitation(correlationId, invitationId, role);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -97,12 +97,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.deny_invitation');
         
         try {
-            return await this._controller.denyInvitation(correlationId, invitationId);
+            let res = await this._controller.denyInvitation(correlationId, invitationId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
     
@@ -110,12 +110,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.resend_invitation');
         
         try {
-            return await this._controller.resendInvitation(correlationId, invitationId);
+            let res = await this._controller.resendInvitation(correlationId, invitationId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -123,12 +123,12 @@ export class InvitationsDirectClientV1 extends DirectClient<any> implements IInv
         let timing = this.instrument(correlationId, 'invitations.notify_invitation');
         
         try {
-            return await this._controller.notifyInvitation(correlationId, invitation);
+            let res = await this._controller.notifyInvitation(correlationId, invitation);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 

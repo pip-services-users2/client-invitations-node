@@ -28,14 +28,12 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_invitations', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitationPage(response.getPage()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -48,6 +46,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_invitation_by_id', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -55,9 +54,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -71,6 +67,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('create_invitation', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -78,9 +75,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -93,6 +87,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('delete_invitation_by_id', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -100,9 +95,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -116,6 +108,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('activate_invitations', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitationList(response.getInvitations())
                     : null;
@@ -123,9 +116,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -139,6 +129,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('approve_invitation', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -146,9 +137,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -161,6 +149,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('deny_invitation', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -168,9 +157,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -183,6 +169,7 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('resend_invitation', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response
                     ? InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                     : null;
@@ -190,9 +177,6 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -206,13 +190,11 @@ class InvitationsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('notify_invitation', correlationId, request);
                 if (response.error != null)
                     throw InvitationsGrpcConverterV1_1.InvitationsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

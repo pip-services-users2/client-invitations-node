@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InvitationsCommandableGrpcClientV1 = void 0;
+exports.InvitationsCommandableLambdaClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_grpc_nodex_1 = require("pip-services3-grpc-nodex");
-class InvitationsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.CommandableGrpcClient {
+const pip_services3_aws_nodex_1 = require("pip-services3-aws-nodex");
+class InvitationsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
     constructor(config) {
-        super('v1/invitations');
+        super('invitations');
         if (config != null)
             this.configure(pip_services3_commons_nodex_1.ConfigParams.fromValue(config));
     }
@@ -57,7 +57,7 @@ class InvitationsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Comm
     }
     approveInvitation(correlationId, invitationId, role) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.callCommand('approve_invitation', correlationId, {
+            return yield this.callCommand('approved_invitation', correlationId, {
                 invitation_id: invitationId,
                 role: role
             });
@@ -85,5 +85,5 @@ class InvitationsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Comm
         });
     }
 }
-exports.InvitationsCommandableGrpcClientV1 = InvitationsCommandableGrpcClientV1;
-//# sourceMappingURL=InvitationsCommandableGrpcClientV1.js.map
+exports.InvitationsCommandableLambdaClientV1 = InvitationsCommandableLambdaClientV1;
+//# sourceMappingURL=InvitationsCommandableLambdaClientV1.js.map

@@ -10,7 +10,7 @@ import { InvitationsMemoryPersistence } from 'service-invitations-node';
 import { InvitationsController } from 'service-invitations-node';
 import { InvitationsHttpServiceV1 } from 'service-invitations-node';
 
-import { InvitationsHttpClientV1 } from '../../src/version1/InvitationsHttpClientV1';
+import { InvitationsCommandableHttpClientV1 } from '../../src/version1/InvitationsCommandableHttpClientV1';
 import { InvitationsClientFixtureV1 } from './InvitationsClientFixtureV1';
 
 var httpConfig = ConfigParams.fromTuples(
@@ -19,9 +19,9 @@ var httpConfig = ConfigParams.fromTuples(
     "connection.port", 3000
 );
 
-suite('InvitationsRestClientV1', ()=> {
+suite('InvitationsCommandableClientV1', ()=> {
     let service: InvitationsHttpServiceV1;
-    let client: InvitationsHttpClientV1;
+    let client: InvitationsCommandableHttpClientV1;
     let fixture: InvitationsClientFixtureV1;
 
     suiteSetup(async () => {
@@ -38,12 +38,12 @@ suite('InvitationsRestClientV1', ()=> {
             new Descriptor('service-roles', 'client', 'null', 'default', '1.0'), new RolesNullClientV1(),
             new Descriptor('service-invitations', 'persistence', 'memory', 'default', '1.0'), persistence,
             new Descriptor('service-invitations', 'controller', 'default', 'default', '1.0'), controller,
-            new Descriptor('service-invitations', 'service', 'http', 'default', '1.0'), service
+            new Descriptor('service-invitations', 'service', 'commandable-http', 'default', '1.0'), service
         );
         controller.setReferences(references);
         service.setReferences(references);
 
-        client = new InvitationsHttpClientV1();
+        client = new InvitationsCommandableHttpClientV1();
         client.setReferences(references);
         client.configure(httpConfig);
 

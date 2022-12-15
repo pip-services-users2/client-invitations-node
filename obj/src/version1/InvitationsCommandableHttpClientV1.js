@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InvitationsCommandableGrpcClientV1 = void 0;
+exports.InvitationsCommandableHttpClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_grpc_nodex_1 = require("pip-services3-grpc-nodex");
-class InvitationsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.CommandableGrpcClient {
+const pip_services3_rpc_nodex_1 = require("pip-services3-rpc-nodex");
+class InvitationsCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
     constructor(config) {
         super('v1/invitations');
         if (config != null)
@@ -79,11 +79,11 @@ class InvitationsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Comm
     }
     notifyInvitation(correlationId, invitation) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.callCommand('notify_invitation', correlationId, {
+            yield this.callCommand('notify_invitation', correlationId, {
                 invitation: invitation
             });
         });
     }
 }
-exports.InvitationsCommandableGrpcClientV1 = InvitationsCommandableGrpcClientV1;
-//# sourceMappingURL=InvitationsCommandableGrpcClientV1.js.map
+exports.InvitationsCommandableHttpClientV1 = InvitationsCommandableHttpClientV1;
+//# sourceMappingURL=InvitationsCommandableHttpClientV1.js.map

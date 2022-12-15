@@ -31,12 +31,11 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response ? InvitationsGrpcConverterV1.toInvitationPage(response.getPage()) : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -50,16 +49,15 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             let response = await this.call<any>('get_invitation_by_id', correlationId, request);
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
-            
+            timing.endTiming();
+
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
-        }        
+        }    
     }
 
     public async createInvitation(correlationId: string, invitation: InvitationV1): Promise<InvitationV1> {
@@ -76,15 +74,14 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
-        }  
+        }
     }
 
     public async deleteInvitationById(correlationId: string, invitationId: string): Promise<InvitationV1> {
@@ -99,15 +96,14 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
-        }  
+        }
     }
 
     public async activateInvitations(correlationId: string, email: string, userId: string): Promise<InvitationV1[]> {
@@ -123,14 +119,13 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitationList(response.getInvitations())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -147,14 +142,13 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -170,14 +164,13 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
     
@@ -193,14 +186,13 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
 
+            timing.endTiming();
             return response
                 ? InvitationsGrpcConverterV1.toInvitation(response.getInvitation())
                 : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -216,11 +208,10 @@ export class InvitationsGrpcClientV1 extends GrpcClient implements IInvitationsC
             let response = await this.call<any>('notify_invitation', correlationId, request);
             if (response.error != null)
                 throw InvitationsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 }

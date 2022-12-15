@@ -21,14 +21,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.get_invitations');
             try {
-                return yield this._controller.getInvitations(correlationId, filter, paging);
+                let res = yield this._controller.getInvitations(correlationId, filter, paging);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -36,14 +35,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.get_invitation_by_id');
             try {
-                return yield this._controller.getInvitationById(correlationId, invitationId);
+                let res = yield this._controller.getInvitationById(correlationId, invitationId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -51,14 +49,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.create_invitation');
             try {
-                return yield this._controller.createInvitation(correlationId, invitation);
+                let res = yield this._controller.createInvitation(correlationId, invitation);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -66,14 +63,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.delete_invitation_by_id');
             try {
-                return yield this._controller.deleteInvitationById(correlationId, invitationId);
+                let res = yield this._controller.deleteInvitationById(correlationId, invitationId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -81,14 +77,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.activate_invitations');
             try {
-                return yield this._controller.activateInvitations(correlationId, email, userId);
+                let res = yield this._controller.activateInvitations(correlationId, email, userId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -96,14 +91,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.approve_invitation');
             try {
-                return yield this._controller.approveInvitation(correlationId, invitationId, role);
+                let res = yield this._controller.approveInvitation(correlationId, invitationId, role);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -111,14 +105,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.deny_invitation');
             try {
-                return yield this._controller.denyInvitation(correlationId, invitationId);
+                let res = yield this._controller.denyInvitation(correlationId, invitationId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -126,14 +119,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.resend_invitation');
             try {
-                return yield this._controller.resendInvitation(correlationId, invitationId);
+                let res = yield this._controller.resendInvitation(correlationId, invitationId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -141,14 +133,13 @@ class InvitationsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'invitations.notify_invitation');
             try {
-                return yield this._controller.notifyInvitation(correlationId, invitation);
+                let res = yield this._controller.notifyInvitation(correlationId, invitation);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

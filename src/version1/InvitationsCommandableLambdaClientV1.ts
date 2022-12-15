@@ -1,17 +1,16 @@
 import { ConfigParams } from 'pip-services3-commons-nodex';
-
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableGrpcClient } from 'pip-services3-grpc-nodex';
+import { CommandableLambdaClient } from 'pip-services3-aws-nodex';
 
 import { InvitationV1 } from './InvitationV1';
 import { IInvitationsClientV1 } from './IInvitationsClientV1';
 
-export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient implements IInvitationsClientV1 {       
-    
+export class InvitationsCommandableLambdaClientV1 extends CommandableLambdaClient implements IInvitationsClientV1 {       
+
     constructor(config?: any) {
-        super('v1/invitations');
+        super('invitations');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
@@ -35,7 +34,7 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
             {
                 invitation_id: invitationId
             }
-        );  
+        );    
     }
 
     public async createInvitation(correlationId: string, invitation: InvitationV1): Promise<InvitationV1> {
@@ -71,7 +70,7 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
 
     public async approveInvitation(correlationId: string, invitationId: string, role: string): Promise<InvitationV1> {
         return await this.callCommand(
-            'approve_invitation',
+            'approved_invitation',
             correlationId,
             {
                 invitation_id: invitationId,
@@ -98,7 +97,7 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
                 invitation_id: invitationId
             }
         );
-    }
+    }    
 
     public async notifyInvitation(correlationId: string, invitation: InvitationV1): Promise<void> {
         return await this.callCommand(
@@ -109,5 +108,5 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
             }
         );
     }
-    
+
 }

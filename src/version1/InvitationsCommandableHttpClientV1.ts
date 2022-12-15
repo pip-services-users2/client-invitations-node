@@ -1,14 +1,13 @@
 import { ConfigParams } from 'pip-services3-commons-nodex';
-
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableGrpcClient } from 'pip-services3-grpc-nodex';
+import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 
 import { InvitationV1 } from './InvitationV1';
 import { IInvitationsClientV1 } from './IInvitationsClientV1';
 
-export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient implements IInvitationsClientV1 {       
+export class InvitationsCommandableHttpClientV1 extends CommandableHttpClient implements IInvitationsClientV1 {       
     
     constructor(config?: any) {
         super('v1/invitations');
@@ -35,7 +34,7 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
             {
                 invitation_id: invitationId
             }
-        );  
+        ); 
     }
 
     public async createInvitation(correlationId: string, invitation: InvitationV1): Promise<InvitationV1> {
@@ -101,7 +100,8 @@ export class InvitationsCommandableGrpcClientV1 extends CommandableGrpcClient im
     }
 
     public async notifyInvitation(correlationId: string, invitation: InvitationV1): Promise<void> {
-        return await this.callCommand(
+        
+        await this.callCommand(
             'notify_invitation',
             correlationId,
             {

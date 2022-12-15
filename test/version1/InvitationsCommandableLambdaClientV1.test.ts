@@ -1,9 +1,9 @@
 import { ConfigParams } from 'pip-services3-commons-nodex';
 
 import { InvitationsClientFixtureV1 } from './InvitationsClientFixtureV1';
-import { InvitationsLambdaClientV1 } from '../../src/version1/InvitationsLambdaClientV1';
+import { InvitationsCommandableLambdaClientV1 } from '../../src/version1/InvitationsCommandableLambdaClientV1';
 
-suite('InvitationsLambdaClient', ()=> {
+suite('InvitationsCommandableLambdaClient', ()=> {
     let AWS_LAMDBA_ARN = process.env["AWS_LAMDBA_ARN"] || "";
     let AWS_ACCESS_ID = process.env["AWS_ACCESS_ID"] || "";
     let AWS_ACCESS_KEY = process.env["AWS_ACCESS_KEY"] || "";
@@ -24,11 +24,11 @@ suite('InvitationsLambdaClient', ()=> {
     if (lambdaConfig.getAsNullableString("connection.protocol") != "aws")
         return;
 
-    let client: InvitationsLambdaClientV1;
+    let client: InvitationsCommandableLambdaClientV1;
     let fixture: InvitationsClientFixtureV1;
 
     setup(async () => {
-        client = new InvitationsLambdaClientV1();
+        client = new InvitationsCommandableLambdaClientV1();
         client.configure(lambdaConfig);
 
         fixture = new InvitationsClientFixtureV1(client);
