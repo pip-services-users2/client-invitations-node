@@ -8,7 +8,7 @@ import { RolesNullClientV1 } from 'client-roles-node';
 
 import { InvitationsMemoryPersistence } from 'service-invitations-node';
 import { InvitationsController } from 'service-invitations-node';
-import { InvitationsHttpServiceV1 } from 'service-invitations-node';
+import { InvitationsCommandableHttpServiceV1 } from 'service-invitations-node';
 
 import { InvitationsCommandableHttpClientV1 } from '../../src/version1/InvitationsCommandableHttpClientV1';
 import { InvitationsClientFixtureV1 } from './InvitationsClientFixtureV1';
@@ -20,7 +20,7 @@ var httpConfig = ConfigParams.fromTuples(
 );
 
 suite('InvitationsCommandableClientV1', ()=> {
-    let service: InvitationsHttpServiceV1;
+    let service: InvitationsCommandableHttpServiceV1;
     let client: InvitationsCommandableHttpClientV1;
     let fixture: InvitationsClientFixtureV1;
 
@@ -29,7 +29,7 @@ suite('InvitationsCommandableClientV1', ()=> {
         let persistence = new InvitationsMemoryPersistence();
         let controller = new InvitationsController();
 
-        service = new InvitationsHttpServiceV1();
+        service = new InvitationsCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(
